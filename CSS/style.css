@@ -1,0 +1,240 @@
+/* General Body and Layout */
+body {
+    font-family: italic;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+header {
+    background-color: #6923db;
+    color: rgb(245, 252, 255);
+    padding: 8px;
+    text-align: center;
+    position: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%; 
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+nav {
+    display: flex;
+    align-items: center; 
+}
+
+nav a, .logout-button {
+    color: rgb(86, 39, 214);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1em;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+nav a:hover, .logout-button:hover {
+    text-decoration: underline;
+}
+
+.logout-button {
+    background-color: #ff5733;
+    color: rgb(82, 47, 235);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #e84e2f;
+}
+
+/* Cart Link - Fixed beside Register button */
+.cart-link {
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.cart-link:hover {
+    color: #16a085;
+}
+
+.cart-icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+}
+
+/* Search Bar Styling */
+.search-form {
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.search-form input[type="text"] {
+    padding: 8px;
+    font-size: 14px;
+    margin-right: 5px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+}
+
+.search-form input[type="text"]:focus {
+    border-color: #2ecc71;
+    outline: none;
+}
+
+.search-form button {
+    padding: 12px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #2ecc71;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #27ae60;
+}
+
+/* Main Container */
+.main-container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows responsiveness */
+}
+
+/* Product Listing */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    width: 80%; /* Take up most of the screen */
+}
+
+.product {
+    background-color: #fff;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    width: 23%; /* Set width for 4 products per row */
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+}
+
+.product h3 {
+    margin-bottom: 5px;
+    font-size: 1.3em;
+    color: #333;
+}
+
+.product p {
+    font-size: 1em;
+    color: #777;
+    margin-bottom: 1px;
+}
+
+.product-image {
+    width: 150px; /* Set image size */
+    height: auto;
+    object-fit: c;
+    border-radius: 10px;
+    margin: 8px 0;
+}
+
+/* Flex layout for image and description with description on the left */
+.product-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.product-description {
+    text-align: left;
+    margin-right: 20px; /* Move description to the left of the image */
+    flex: 1;
+}
+
+/* Add to Cart Button Styling */
+.add-to-cart-button {
+    background-color: #2ecc71;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.add-to-cart-button:hover {
+    background-color: #27ae60;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 768px) {
+    .product-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .product-image {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .product-description {
+        text-align: center;
+    }
+
+    .product-list {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .product {
+        width: 100%; /* Full width on smaller screens */
+        margin-bottom: 20px;
+    }
+}
